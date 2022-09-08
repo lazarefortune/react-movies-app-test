@@ -67,6 +67,14 @@
     background-color: #000;
 }
 
+.btn__like{
+    background-color: #368fe7;
+}
+
+.btn__dislike{
+    background-color: #cb60e3;
+}
+
 .text__danger{
     color: #f00;
 }

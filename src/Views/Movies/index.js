@@ -1,13 +1,13 @@
 import Modal from "../../components/Modal";
-import useImageApi from "../../hooks/useImageApi";
-import {useData} from "../../hooks/useData";
 import {Header} from "../../components/Header";
+import { useSelector, useDispatch } from 'react-redux'
+import {LikeButton} from "../../components/LikeButton";
 
 const MoviesList = () => {
 
-    const { images, loading, error, fetchImages } = useImageApi();
+    // const { images, loading, error, fetchImages } = useImageApi();
 
-    const { movies } = useData();
+    const movies = useSelector(state => state.movie.movies);
 
     return (
         <>
@@ -19,6 +19,8 @@ const MoviesList = () => {
                     {movies.map((movie) => (
                         <div className="movie__item" key={movie.id}>
                             <h1> {movie.title} </h1>
+                            <span> {movie.likes} j'aime(s) </span>
+                            <LikeButton movie={movie}/>
                             <Modal>
                                 <div className="">
                                     <h1>{movie.title}</h1>

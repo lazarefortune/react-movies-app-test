@@ -51,6 +51,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root{
+    --container-width: calc(100% - 40px);
+}
+
 .btn{
     padding: 10px 20px;
     border-radius: 5px;
@@ -80,9 +84,15 @@
 }
 
 .container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    padding-left: calc( 50% - var(--container-width) / 2 );
+    padding-right: calc( 50% - var(--container-width) / 2 );
+}
+
+@media screen and (min-width: 1040px){
+    :root{
+        --container-width: 1000px;
+    }
 }
 
 .movie__title{
